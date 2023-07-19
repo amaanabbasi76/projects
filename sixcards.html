@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+
+}body{
+    background-color: pink;
+}.cardholder{
+    height: 25vw;
+    width: 35vw;
+    background-color: rgba(0, 0, 0, 0);
+    align-items: center;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: 35vh;
+    left: 32vw;
+    overflow-x: hidden;
+
+}.card{
+    height: 25vw;
+    width: 35vw;
+    background-color: aliceblue;
+    position: absolute;
+    left: calc(var(--i)*35vw);
+    
+    overflow-y: hidden;
+    font-size:2vw ;
+    animation: moveon 18s linear infinite;
+    background-color: pink;
+
+
+}
+@keyframes moveon{
+    0%{
+        transform: translateX(0vw);
+    }16%{
+        transform: translateX(0vw);
+    }16.8%{
+        transform: translateX(-35vw);
+    }
+    32.8%{
+        transform: translateX(-35vw);
+    }33.6%{
+        transform: translateX(-70vw);
+    }49.6%{
+        transform: translateX(-70vw);
+    }50.4%{
+        transform: translateX(-105vw);
+    }66.4%{
+        transform: translateX(-105vw);
+    }67.2%{
+        transform: translateX(-140vw);
+    }83.2%{
+        transform: translateX(-140vw);
+    }84%{
+        transform: translateX(-175vw); 
+    }100%{
+        transform: translateX(-175vw); 
+    }
+}.dp
+{   
+    height: 8vw;
+    width: 8vw;
+    border-radius: 50%;
+    background-color: aliceblue;
+    background-size: cover;
+    background-image: url('prokect1.jpeg');
+
+}
+.text{
+    display: flex;
+    justify-content: center;
+    
+    font-variant: small-caps;
+    font-size: 2vw;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    height: 25vw;
+    width: 35vw;
+}.text h2{
+    position: relative;
+    top: 5vw;
+}.text span{
+    position: relative;
+    top: 8vw;
+    left: -5vw;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="cardholder">
+        <div class="card" style="--i:1"><div class="dp"><br><div class="text"><h2>anshika </h2><br><span>(bca)</span> <br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ad temporibus qui saepe repellendus illo praesentium sequi eaque quisquam itaque.</div></div></div>
+        <div class="card" style="--i:2"><div class="dp"><br><div class="text"><h2>anshika </h2><br><span>(bca)</span> <br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ad temporibus qui saepe repellendus illo praesentium sequi eaque quisquam itaque.</div></div></div>
+        
+       
+        <div class="card" style="--i:3"><div class="dp"><br><div class="text"><h2>anshika </h2><br><span>(bca)</span> <br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ad temporibus qui saepe repellendus illo praesentium sequi eaque quisquam itaque.</div></div></div>
+        <div class="card" style="--i:4"><div class="dp"><br><div class="text"><h2>anshika </h2><br><span>(bca)</span> <br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ad temporibus qui saepe repellendus illo praesentium sequi eaque quisquam itaque.</div></div></div>
+        <div class="card" style="--i:5"><div class="dp"><br><div class="text"><h2>anshika </h2><br><span>(bca)</span> <br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ad temporibus qui saepe repellendus illo praesentium sequi eaque quisquam itaque.</div></div></div>
+        <div class="card" style="--i:0"><div class="dp"><br><div class="text"><h2>anshika </h2><br><span>(bca)</span> <br>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ad temporibus qui saepe repellendus illo praesentium sequi eaque quisquam itaque.</div></div></div>
+    </div>
+</body>
+</html>

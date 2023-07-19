@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }body{
+            background-color: rgba(0, 0, 0, 0.295);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }#name{
+            font-size: 5rem;
+           font-variant: small-caps;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="name">amaan</div>
+</body>
+<script>
+let str1="hello world this is amaan a data scientist.......";
+let str2="";
+let i=0;
+const a=document.getElementById("name");
+function writer(){
+    str2=str2+str1[i];
+    i++;
+a.innerText = str2+"|";
+if(i<str1.length){
+    setTimeout(function(){
+        writer();
+    },100 );
+}else{
+    
+    setTimeout(function(){
+        rought()
+},1000)
+    
+}
+
+}writer();
+function rought(){
+    str2=str2.slice(0,-1);
+    a.innerText=str2+"|";
+    i--;
+    if(i>0){
+        setTimeout(function(){
+            rought();
+        },100)
+
+    }else{
+        writer()
+    }
+}
+
+</script>
+</html>

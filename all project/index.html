@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }.main{
+            position: absolute;
+            top: 2%;
+            width: 40vw;
+            left: 30vw;
+            font-size: x-large;
+            font-variant: small-caps;
+            
+        }body{
+            background-color: #a629fa;
+        }button {
+           
+            height: 5vh;
+            font-variant: small-caps;
+            width: 20%;
+            border-radius: 10px;
+            color: black;
+        }.darkmor{
+             position: absolute;
+            top: 30%;
+            left: 20%;
+        }.clock{
+            position: absolute;
+            top: 30%;
+            left: 60%;   
+        }.game{
+            position: absolute;
+            top: 40%;
+            left: 60%;   
+        }.dreamon{
+            position: absolute;
+            top: 40%;
+            left: 20%;  
+        }.to-do{
+            position: absolute;
+            top: 50%;
+            left: 20%;  
+        }
+        .timeout{
+            position: absolute;
+            top: 50%;
+            left: 60%;  
+        }
+        .laptext{
+            position: absolute;
+            top: 60%;
+            left: 20%;  
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        
+    </div>
+    <button class="darkmor" ><a href="darkmode.html">dark/light mode</a></button>
+    <button class="clock" ><a href="DigitalClock.html">Clock</a></button>
+    <button class="game" ><a href="game.html">GAME</a></button>
+    <button class="dreamon" ><a href="dreamone.html">anime</a></button>
+    <button class="to-do" ><a href="to-do.html">to-do list</a></button>
+    <button class="timeout" ><a href="timeout.html">timeout</a></button>
+    <button class="laptext" ><a href="laptop.html">scroll text</a></button>
+</body>
+<script>
+    let main = document.querySelector('.main');
+    let i = 0;
+    let str2 = "";
+    let str1 = "hello everyone my name is amaan abbasi here i will upload my some minore projects over web dev .  if you like my projects then just wish me to learn more and more";
+    
+function writer(){
+    str2=str2+str1[i];
+    i++;
+main.innerText = str2+"|";
+if(i<str1.length){
+    setTimeout(function(){
+        writer();
+    },100 );
+}else{
+    setTimeout(function(){
+        rought()
+},1000)
+    
+}}writer();
+function rought(){
+    str2=str2.slice(0,-1);
+    main.innerText=str2+"|";
+    i--;
+    if(i>0){
+        setTimeout(function(){
+            rought();
+        },100)
+
+    }else{
+        writer()
+    }
+}
+</script>
+</html>

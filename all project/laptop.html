@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }body{
+            background-color: gray;
+            height: 3000px;
+            width: 100vw;
+            overflow-x: hidden;
+        }.main{
+            
+            position: absolute;
+            height: 3624px;
+            width: 100vw;
+            background-size: 65vw 65vw;
+            background-attachment:fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+        }#contain{
+            height: 10%;
+            width: 100vw;
+            background-color: white;
+            border: 10px solid black;
+            position: absolute;
+            
+            top: 100px;
+            transition-duration: 0s;
+            font-size: larger;
+            text-align: center;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <span id="contain"></span>
+
+    </div>
+    <script>
+        let a = document.getElementById('contain');
+        const str = "hello world! this was the first thing i said to human but now i am ruling the world. i know about you more then you like what you like to eat where you live what you are searching for i am that future you saw in a movie name terminator"
+        
+        let i = 0;
+        let index1 = 0;
+        console.log(str[5]);
+       
+        console.log(str.length);
+        window.addEventListener("scroll",()=>{
+            if(i<235){
+            let value  = window.scrollY;
+            if(value >= i*12){
+                if(i%40 == 0){
+                    a.innerText =a.innerText + "\n";
+                }
+                if(str[i] == " "){
+                 a.innerText =a.innerText + "_";
+                 i++;
+                }else{
+                a.innerText = a.innerText + str[i];
+                i++;
+                }
+            }
+            a.style.top = value+100+"px";
+            
+           
+        }   
+        })
+    </script>
+</body>
+</html>

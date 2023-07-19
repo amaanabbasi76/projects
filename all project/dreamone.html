@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+}body{
+    min-height: 600vh;
+}#main{
+   
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-position: center;
+    background-size: cover ;
+    background-attachment: fixed;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    transition-duration: 0.001s;
+    background-image: url('images2/aaaaaaaaaaaa.png');
+    transition-timing-function: linear;
+}h1{
+    position: absolute;
+    top: 1%;
+    left: 20%;
+}
+
+    </style>
+</head>
+<body>
+    <h1>first scroll can be disturbing</h1>
+    <canvas id="main"></canvas>
+</body>
+
+<script>
+
+    const main = document.getElementById('main');
+    const cxt = main.getContext('2d');
+    window.addEventListener("scroll",()=>{
+        cxt.clearRect(0,0,1000,1000)
+        let value = window.scrollY;
+        let index = parseInt(value/20)+1;
+        main.style.top = value + 'px';
+        if(index<10){
+        main.style.backgroundImage = 'url(images2/male000'+index+'.png)';}
+        else if(index<100 && index>9){
+            main.style.backgroundImage = 'url(images2/male00'+index+'.png)';}   
+        else{
+            main.style.backgroundImage = 'url(images2/male0'+index+'.png)';
+        }
+    })
+    consol.log(160-100/12);
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }body{
+            background-color: aquamarine;
+        }
+        canvas{
+            height: 600px;
+            width: 600px;
+            border: 2px solid black;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }.instruc{
+            position: absolute;
+            top: 85%;
+            left : 40%;
+            font-size: x-large;
+            font-variant: small-caps;
+            color: rgb(11, 133, 240);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="instruc">
+        press c for roll <br>
+        press d for run <br>
+        press a to stop <br>
+        press w for jump <br>
+    </div>
+</body>
+<script>
+let canvas = document.getElementById('canvas');
+const cxt = canvas.getContext('2d');
+const CANVAWIDTH = canvas.width = 600;
+const CANVAH = canvas.height = 600;
+const piwidth = 575;
+const pich = 523;
+const Img = new Image();
+Img.src = 'images2/shadow_dog.png';
+let x = 0;
+let d=0;
+let y = 7;
+document.addEventListener("keypress",function(event){
+var keypressed = event.which||event.keyCode;
+
+if(keypressed==100){
+    d = 3;
+    y = 8;
+}else if(keypressed == 97){
+    d=0;
+    y=7;
+}else if(keypressed == 99){
+    d = 6;
+    y = 7;
+    setTimeout(()=>{
+        d = 0;
+        y = 7;
+    },1000);
+}else if(keypressed == 119){
+    d = 1;
+    y = 7;
+    setTimeout(()=>{
+        d = 0;
+        y = 7;
+    },700);
+}
+})
+
+
+a = setInterval(
+function anime(){
+    cxt.clearRect(0,0,600,600);
+    cxt.drawImage(Img,x*piwidth,d*pich,piwidth,pich,0,0,CANVAWIDTH,CANVAH);
+    x++;
+    if(x==y){
+        x = 0;
+    }
+  
+},100);
+anime();
+</script>
+</html>

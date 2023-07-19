@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0px;
+        }
+        
+        
+        body{
+            background-image: url("image/luca-bravo-zAjdgNXsMeg-unsplash.jpg");
+            background-repeat:no-repeat;
+            background-size:cover; 
+            background-position:bottom;
+            height: 100vh;
+            display: flex;
+        
+        }
+        
+        
+        #navbar{
+            width: 300px;
+            height: 30px;
+            position: absolute;
+            top:8px;
+            left:20px;
+            background:linear-gradient(0deg , aqua  ,transparent );
+            border-radius: 20px;
+            box-shadow:0px 5px 15px 0.1px black;
+            transition: all 1s;
+        
+        }
+        #navbar:hover{
+            box-shadow:0px 10px 25px 0.1px black;
+        }
+        
+         #navbar ul {
+            display:flex;   
+        }
+         #navbar ul li{
+            list-style: none;
+            margin-right: 12px;  
+        }
+        
+         #navbar ul li a{
+            height: 30px;
+            text-transform: uppercase;
+            font-family: arial;
+            font-weight: lighter;
+            font-size: 8px;
+            position: relative;
+            bottom: -4px;
+            left:20px;
+            padding: 5px;
+            color: rgb(0, 0, 0);
+          
+            
+        }
+        
+        #navbar ul li a:hover{
+            font-size:10px ;
+            font-weight: bold;
+            border-bottom:rgb(0, 0, 0) solid 1.3px;
+            border-top:rgb(0, 0, 0) solid 1.3px;
+            
+        }
+        
+        
+        #heading
+        {
+            font-size: 60px;
+            font-family:cursive;
+            font-variant: small-caps;
+            position: absolute;
+            left:190px;
+            top:80px;
+            color:white;
+        
+        }
+        
+        #inpsearch{
+            position:fixed;
+        }
+        
+        #icon{
+            height: 25px;
+            width: 25px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: rgb(255, 255, 255);
+            position:fixed;
+            top:9.5px;
+            right:40px;
+            z-index: 1;
+          
+        }
+        
+        #inp{
+            width: 0px;
+            height: 0px;
+            padding: 0;
+            position:relative;
+            top:10px;
+            right: -705px;
+        
+        }
+        
+        #icon:hover + #inp{
+            width:100px;
+            height: 29px;
+            border-radius: 25px;
+            border:1.5px solid black;
+            position:relative;
+            top:7.5px;
+            right: -630px;
+            padding-left: 7px;
+            box-shadow: 1px 2px 15px 4px ;
+        }
+        
+        
+        #main , .mainml {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            margin-right: 10px;
+            overflow: hidden;
+            position: relative;
+            top:200px;
+            left: 130px;
+            border-radius:6px;
+        
+            
+            
+        }
+        
+        
+        div + #ml
+        {
+            width:120px;
+        }
+        
+        .name{
+            background-color: aqua;
+            position: absolute;
+            bottom:0px;
+            right:0px;
+            width: 100px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: arial;
+            text-transform: uppercase;
+            font-size: 13px;
+            border-top:black solid 1.5px;
+        }
+        
+        .nameml{
+            background-color: aqua;
+            position: absolute;
+            bottom:0px;
+            right:0px;
+            width: 130px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: arial;
+            text-transform: uppercase;
+            font-size: 13px;
+            border-top:black solid 1.5px;
+        }
+        
+         
+        span{
+            position: absolute;
+        }
+        
+        #sec{
+            font-size: 70px;
+            left: 15px;
+            top: -4px;
+        }
+        
+        #hour{
+            font-size: 70px;
+            left: 15px;
+            top: -4px;
+        }
+        
+        #milisec{
+            font-size: 70px;
+            left: 5px;
+            top: -4px;
+        }
+        
+        
+        #min{
+            font-size: 70px;
+            left: 15px;
+            top: -4px;
+        }
+        
+        #ampm{
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            border: aqua inset 2px;
+            background-color: aliceblue;
+            position: relative;
+            top:240px;
+            left:130px;
+            font-size: 23px;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        #milisec2{
+            font-size: 10px;
+        }
+        .wallclock{
+            background-color:antiquewhite;
+            position: absolute;
+            height: 400px;
+            width: 400px;
+            top: 350px;
+            left: 200px;
+            border-radius: 50%;
+        }.dailer{
+            height: 30px;
+            width: 5px;
+            background-color: gold;
+            position: absolute;
+            left: 195px;
+            transform: rotateZ(calc(var(--i)*30deg));
+            transform-origin: 2.5px 200px;
+            
+        
+           
+        }#hour1{
+            background-color: black;
+            width: 5px;
+            height: 180px;
+            position: absolute;
+            left: 195px;
+            top: 30px;
+            transform-origin: 2.5px 170px;
+            
+        }
+        #min1{
+            background-color: rgb(203, 14, 14);
+            width: 5px;
+            height: 180px;
+            position: absolute;
+            left: 195px;
+        
+        
+            top: 30px;
+           transform-origin: 2.5px 170px;
+            
+        }#sec1{
+            background-color: rgb(20, 50, 247);
+            width: 5px;
+            height: 180px;
+            position: absolute;
+            left: 195px;
+            top: 30px;
+            transform-origin: 2.5px 170px;
+           
+            
+        }.center{
+            height: 30px;
+            width: 30px;
+            background-color: silver;
+            border-radius: 50%;
+            position: absolute;
+            left: 185px;
+            top: 185px;
+        }.values{
+            height: 30px;
+            width: 5px;
+            color: black;
+            position: absolute;
+            left: 195px;
+            transform: rotateZ(calc(var(--j)*6deg));
+            transform-origin: 2.5px 200px;
+            
+            
+        
+            
+        }
+    </style>
+   
+</head>
+<body>
+   
+       <div id="navbar">
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>gallery</a></li>
+            <li><a>about</a></li>
+            <li><a>contact</a></li>
+           <li><a>privacy</a></li>
+        </ul>
+        
+       </div>
+       
+     <div id="heading">
+        <div>digital clock</div>
+     </div>
+
+     <div id="inpsearch">
+        <div id="icon">
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+
+        <input type="search" placeholder="Search" autofocus id="inp">
+
+     </div>
+ 
+    <div  id="main">
+        <span id="hour">00</span>
+        <span class="name">Hours</span>
+    </div>
+    
+    <div  id="main">    
+         <span id="min">00</span>
+         <span class="name">Minutes</span>
+    </div>
+    
+    <div  id="main">
+        <span id="sec">00</span>
+        <span class="name">Seconds</span>
+    </div>
+
+    <div id="ml"  class="mainml">
+        <span id="milisec" >00</span>
+        <span class="nameml">Miliseconds</span>
+    </div>
+
+
+        <span id="ampm"></span>
+         <div class="wallclock">
+            <div class="dailer" style="--i:1"></div>
+            <div class="dailer" style="--i:2"></div>
+            <div class="dailer" style="--i:3"></div>
+            <div class="dailer" style="--i:4"></div>
+            <div class="dailer" style="--i:5"></div>
+            <div class="dailer" style="--i:6"></div>
+            <div class="dailer" style="--i:7"></div>
+            <div class="dailer" style="--i:8"></div>
+            <div class="dailer" style="--i:9"></div>
+            <div class="dailer" style="--i:10"></div>
+            <div class="dailer" style="--i:11"></div>
+            <div class="dailer" style="--i:12"></div>
+            
+            <div id="hour1"></div>
+            <div id="min1"></div>
+            <div id="sec1"></div>
+            <div class="center"></div>
+         </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let hour = document.getElementById("hour");
+let min = document.getElementById("min");
+let sec  = document.getElementById("sec");
+let milisec = document.getElementById("milisec");
+
+function clock()
+{
+   let h = new Date().getHours();
+   let m = new Date().getMinutes();
+   let s = new Date().getSeconds();
+   
+  let ampm=document.getElementById("ampm");
+  if(h<12){
+    ampm.textContent="AM";
+  }else{
+    ampm.textContent="PM";
+  }
+
+   h = h < 10 ? "0"+h : "0"+h%12;
+   m = m < 10 ? "0"+m : m; 
+   s = s <10 ? "0"+ s : s;
+   
+
+   hour.innerText = h;
+   min.innerText = m;
+   sec.innerText = s;  
+   
+   let secAngle=s*6;
+let secNeedle = document.getElementById("sec1");
+secNeedle.style.transform="rotateZ("+secAngle+"deg)";
+let minAngle=m*6;
+let minNeedle = document.getElementById("min1");
+minNeedle.style.transform="rotateZ("+minAngle+"deg)";
+let hourAngle=(h%12)*30+(m/2);
+let hourNeedle = document.getElementById("hour1");
+hourNeedle.style.transform="rotateZ("+hourAngle+"deg)";
+   setTimeout(function(){
+     clock();
+   },1000)
+
+}
+clock();
+  
+function milisec1(){
+  let ml = new Date().getMilliseconds();
+  milisec.innerText = ml ;
+  setTimeout(function(){
+    milisec1();
+  }
+  ,1)
+}
+milisec1();
+</script>
+</html>

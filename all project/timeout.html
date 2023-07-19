@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }body{
+            background-color: rgba(0, 0, 0, 0.468);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }.main{
+            background-color: gray;
+            height: 30vw;
+            width: 30vw;
+            border-radius:50% ;
+            position: relative;
+            top: 10vw;
+            display: flex;
+            justify-content: center;
+           
+            
+            box-shadow: 0px 0px 10px black
+            ,0px 0px 20px black,
+            0px 0px 30px black,
+            0px 0px 40px black;
+        }.loader{
+            position: absolute;
+            height: 7vw;
+            width: 0.5vw;
+            background-color: hsl(calc(var(--i)*6),50%,50%);
+            transform-origin: 0.25vw 15vw;
+            transform: rotateZ(calc(var(--i)*6deg));
+            opacity: 1;
+            left: -0.3vw;
+            
+           
+        }.anime>.loader{
+           opacity: 1;
+        }
+        
+        #up{
+            position: absolute;
+            
+        }
+        
+        #num
+        {
+            font-size: 15vw;
+            color: black;
+            font-weight: bolder;
+            position: relative;
+            margin-top: 4vw;
+            
+        }@keyframes wipeout{
+            0%{
+                opacity: 1;
+            }99%{
+                opacity: 1;
+            }100%{
+                opacity: 0;
+            }
+        }button{
+            height: 20px;
+            width: 10vw;
+            background-color: red;
+            position: relative;
+            top: 15vw;
+            border-radius:4px ;
+            
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="main">
+        
+        <span id="num">5</span>
+        <div id="up">
+        
+        <div class="loader" style="--i:0"></div>
+        <div class="loader" style="--i:1"></div>
+        <div class="loader" style="--i:2"></div>
+        <div class="loader" style="--i:3"></div>
+        <div class="loader" style="--i:4"></div>
+        <div class="loader" style="--i:5"></div>
+        <div class="loader" style="--i:6"></div>
+        <div class="loader" style="--i:7"></div>
+        <div class="loader" style="--i:8"></div>
+        <div class="loader" style="--i:9"></div>
+        <div class="loader" style="--i:10"></div>
+        <div class="loader" style="--i:11"></div>
+        <div class="loader" style="--i:12"></div>
+        <div class="loader" style="--i:13"></div>
+        <div class="loader" style="--i:14"></div>
+        <div class="loader" style="--i:15"></div>
+        <div class="loader" style="--i:16"></div>
+        <div class="loader" style="--i:17"></div>
+        <div class="loader" style="--i:18"></div>
+        <div class="loader" style="--i:19"></div>
+        <div class="loader" style="--i:20"></div>
+        <div class="loader" style="--i:21"></div>
+        <div class="loader" style="--i:22"></div>
+        <div class="loader" style="--i:23"></div>
+        <div class="loader" style="--i:24"></div>
+        <div class="loader" style="--i:25"></div>
+        <div class="loader" style="--i:26"></div>
+        <div class="loader" style="--i:27"></div>
+        <div class="loader" style="--i:28"></div>
+        <div class="loader" style="--i:29"></div>
+        <div class="loader" style="--i:30"></div>
+        <div class="loader" style="--i:31"></div>
+        <div class="loader" style="--i:32"></div>
+        <div class="loader" style="--i:33"></div>
+        <div class="loader" style="--i:34"></div>
+        <div class="loader" style="--i:35"></div>
+        <div class="loader" style="--i:36"></div>
+        <div class="loader" style="--i:37"></div>
+        <div class="loader" style="--i:38"></div>
+        <div class="loader" style="--i:39"></div>
+        <div class="loader" style="--i:40"></div>
+        <div class="loader" style="--i:41"></div>
+        <div class="loader" style="--i:42"></div>
+        <div class="loader" style="--i:43"></div>
+        <div class="loader" style="--i:44"></div>
+        <div class="loader" style="--i:45"></div>
+        <div class="loader" style="--i:46"></div>
+        <div class="loader" style="--i:47"></div>
+        <div class="loader" style="--i:48"></div>
+        <div class="loader" style="--i:49"></div>
+        <div class="loader" style="--i:50"></div>
+        <div class="loader" style="--i:51"></div>
+        <div class="loader" style="--i:52"></div>
+        <div class="loader" style="--i:53"></div>
+        <div class="loader" style="--i:54"></div>
+        <div class="loader" style="--i:55"></div>
+        <div class="loader" style="--i:56"></div>
+        <div class="loader" style="--i:57"></div>
+        <div class="loader" style="--i:58"></div>
+        <div class="loader" style="--i:59"></div>
+    </div>
+   
+    </div>
+    <button onclick="visible();
+    count(); reset();
+    ">start</button>
+</body>
+<script>
+    var i=5;
+ let b = document.getElementById('num');
+ function count(){
+    if(i>0){
+   abs =  setInterval(()=>{
+         i--;
+        b.innerText = i;
+        
+        if(i==0){
+            clearInterval(abs);
+        }
+    },1000)
+ } } ;
+let a=document.getElementById('up');
+let c = a.querySelectorAll('.loader');
+let j = 0;
+function visible(){
+    if(i>0){
+opec = setInterval(()=>{
+    if(j<60){
+    c[j].style.opacity = 0;
+    j++;
+}else{
+   j=0;
+   c.forEach(Element=>{
+    Element.style.opacity = 1
+   })
+   if(i==0){
+    clearInterval(opec);
+   }
+}
+   
+},20);
+    }}
+ 
+function reset(){
+    if(i==0){
+        i=5;
+        b.innerText = 5;
+        visible();
+         count();
+
+    }
+}
+
+
+
+
+</script>
+</html>

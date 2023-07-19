@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }body{
+            background-image: linear-gradient(to left,purple,white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }#main{
+            height: 100%;
+            width: 50%;
+            position: relative;
+            top: 20vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            background-color: aliceblue;
+            font-variant: small-caps;
+            font-size: larger;
+            padding: 5px;
+            border-radius: 20px;
+
+        }#todo{
+            padding: 5px;
+            margin: 10px;
+            
+        }input{
+            padding: 10px;
+            border-radius: 10px;
+        }button{
+            height: 35px;
+            width: 60px;
+            border-radius: 10px;
+            background-color: orange;
+            font-variant: small-caps;
+        }#list{
+        list-style: none;
+        }#list li::before{
+            content: '';
+            position: absolute;
+            height: 20px;
+            border: 1px solid black;
+            width: 20px;
+            border-radius:50% ;
+            background-color: rgba(246, 240, 240, 0.986);
+           right: 100%;
+            
+            
+        }#list li{
+            cursor: pointer;
+            width: 100%;
+            margin: 5px;
+            max-width: 150px;
+            padding: 1px 0px 1px 5px;
+           display: flex;
+           flex-direction: row;
+           align-items: center;
+           justify-content: space-between;
+            position: relative;
+           text-align: center;
+            
+           
+        }#list li span{
+            height: 30px;
+            width: 30px;
+            position: relative;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+           
+        }#list li span:hover{
+            background-color: rgba(0, 0, 0, 0.454);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <head id="todo">to-do list</head> <div id="head">
+        <input type="text" id="toadd"  placeholder="write here">
+        <button onclick="add()">add</button>
+    </div>
+        <ul id="list">
+           
+            
+        </ul>
+    </div>
+</body>
+<script>
+    let listItem = document.getElementById('list');
+    
+    function add(){
+        let content = document.getElementById('toadd').value;
+        if(content == ''){
+            alert("please enter text");
+        }else{
+        let newli = document.createElement('li');
+        newli.innerText = content;
+        listItem.appendChild(newli);
+        let spam = document.createElement("span");
+        spam.innerText = "\u00d7";
+        newli.appendChild(spam);
+        document.getElementById
+        ('toadd').value = "";
+    }}
+    listItem.addEventListener("click",function(event){
+        if(event.target.tagName == "SPAN"){
+            event.target.parentElement.remove();
+        }
+      
+        
+        
+    })
+    
+</script>
+</html>

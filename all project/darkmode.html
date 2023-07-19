@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: rgb(236, 236, 232);
+
+        }button{
+            height: 20px ;
+            width: 60px;
+            position: relative;
+            top: 150px;
+            left: 50%;
+            background-color: rgba(0, 0, 0, 0.192);
+            transform: translate(-50%);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }#switch{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            top: -7px;
+        }.main{
+            height: 300px;
+            width: 200px;
+            border: 2px solid black;
+            position: relative;
+            top: 170px;
+            left: 35%;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }.dp{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: aquamarine;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-image: url('images2/male0001.png');
+            background-size: 80px 60px;
+            background-position: -10px;
+        }.intro{
+            padding: 2px;
+            position: absolute;
+            top: 100px;
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body>
+    <button class="clickON" onclick="darkmode()"><div id="switch"></div></button>
+    <div class="main">
+        <div class="profile">
+            <div class="dp"></div>
+            <div class="intro"><h2>amaan abbasi</h2><br>
+            AIR in iit jam maths is 215. <br>
+           learning about web dev and data science .<br>
+           i am good in DSA.
+           </div>
+      
+
+            
+        </div>
+    </div>
+</body>
+<script>
+    var a = 1;
+    let dot = document.getElementById('switch');
+    let btn = document.querySelector('.clickON');
+   let amaan = document.querySelector('.main');
+   let intro = document.querySelector('.intro');
+    function darkmode(){
+        if(a == 1){
+            a =0;
+            intro.style.color = "white";
+            btn.style.backgroundColor = "white";
+            dot.style.left = "30px";
+            dot.style.backgroundColor = 'white';
+            amaan.style.backgroundColor = "black";
+            document.body.style.backgroundColor = 'gray';
+
+        }else{
+            a = 1;
+            intro.style.color = "black";
+            btn.style.backgroundColor = "rgba(0, 0, 0, 0.192)";
+            dot.style.backgroundColor = 'black';
+            dot.style.left = "0px";
+            amaan.style.backgroundColor = "white";
+            document.body.style.backgroundColor = 'white';
+           
+        }
+    }    
+</script>
+</html>
