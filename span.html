@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            position: relative;
+            top: 40%;
+            left: 20%;
+            height: 500px;
+            width: 500px;
+            background-color: rgba(0, 255, 255, 0);
+        }#main span{
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            
+            background-image:url("images2/IMG_20191003_193016_569.jpg");
+            background-size: 500px 500px;
+           animation: anime 5s linear infinite alternate;
+           
+
+        }@keyframes anime{
+            0%{
+                
+              transform: translateX(0px) translateY(0px);
+                
+            }45%{
+                scale: 1;
+                transform: translateX(0px) translateY(0px);
+            }
+            50%{
+                scale: 0.25;
+                transform: translateX(250px) translateY(500px);
+            }
+            
+            55%{
+                scale: 1;
+                transform: translateX(500px) translateY(0px);
+            }100%{
+                scale: 1;
+               
+                transform: translateX(500px) translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+</body>
+<script>
+    const a = document.getElementById('main');
+    
+    for(let i = 0 ;i<50;i++){
+       
+        for(let j = 0 ;j<50;j++){
+           
+        let Spane = document.createElement("span");
+        a.appendChild(Spane);
+        Spane.style.top = i*10 + "px";
+        Spane.style.left = j*10 + "px";
+        Spane.style.backgroundPosition = -j*10 + "px " + -i*10 + 'px , center';
+        Spane.style.animationDelay = j*0.049 + i*0.01+ 's';
+    
+    if(window.innerWidth < 500){
+        Spane.style.animationPlayState = "pause";
+    }
+
+}
+        
+    }
+</script>
+</html>
