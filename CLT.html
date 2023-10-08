@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+body{
+align-items: center;
+justify-content: center;
+display: flex;
+flex-direction: column;
+background-color: rgb(179, 163, 163);
+
+}#graph{
+    height: 600px;
+    background-color: rgb(23, 139, 241);
+    width: 400px;
+    position: relative;
+    top: 40px;
+}#graph div{
+    position: absolute ;
+}.main{
+    position: relative;
+    top: 40px;
+    width: 400px;
+    word-wrap: normal;
+}
+
+    </style>
+</head>
+<body>
+    <div id="graph"></div>
+    <div class="main">gfghh</div>
+</body>
+<script>
+
+let graphd = document.getElementById('graph')
+let zeros = Array.from({length:80}, () => 0);
+let b = 0;
+function me(i){
+if(i<100000){
+    var a = Math.floor(Math.random() * 80)
+    
+  if(i == 0){
+    b = a;
+  }else{
+    b = (b+a)/2
+    b = Math.floor(b)
+  }
+    let sp = document.createElement("div");
+    sp.style.height = "1px"
+    sp.style.width = "5px"
+    sp.style.backgroundColor = "red"
+    graphd.appendChild(sp)
+    sp.style.top = 599 - zeros[b]*1 + 'px'
+    zeros[b]++;
+    sp.style.left = (b)*5 + 'px'
+    i++;
+    setTimeout(function () {
+                    me(i);
+                }, 0.0001);
+
+    
+}}
+me(0)
+console.log(zeros)
+let main = document.querySelector('.main');
+    let i = 0;
+    let str2 = "  ";
+    let str1 = "hello everyone my name is amaan abbasi here you can see while choosing  random numbers from 0  to 80 then the graph of  avarage value of out comes following the normal distribution";
+    if(window.innerWidth > 400){
+       
+    
+function writer(){
+    str2=str2+str1[i];
+    i++;
+main.innerText = str2+"";
+if(i<str1.length){
+    setTimeout(function(){
+        writer();
+    },100 );
+}else{
+    setTimeout(function(){
+        rought()
+},100)
+    
+}}writer();
+function rought(){
+    str2=str2.slice(0,-1);
+    main.innerText=str2+"|";
+    i--;
+    if(i>0){
+        setTimeout(function(){
+            rought();
+        },100)
+
+    }else{
+        writer()
+    }
+}}
+
+</script>
+</html>
