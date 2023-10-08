@@ -24,24 +24,56 @@ background-color: rgb(179, 163, 163);
     top: 40px;
 }#graph div{
     position: absolute ;
-}.main{
+}#graph span{
+    position: absolute ;
+
+    font-size: 4px;
+}
+.main{
     position: relative;
-    top: 40px;
+    top: 80px;
     width: 400px;
     word-wrap: normal;
+}.nums{
+    height: 10px;
+    width: 400px;
+    position: relative;
+    top: 40px;
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
 }
+.nums span{
+    color: black;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+flex-direction: row;
+    font-size: 4px;
+    width: 5px;
 
+}
     </style>
 </head>
 <body>
     <div id="graph"></div>
-    <div class="main">gfghh</div>
+    <div class="nums"></div>
+    <div class="main"></div>
 </body>
 <script>
 
 let graphd = document.getElementById('graph')
 let zeros = Array.from({length:80}, () => 0);
 let b = 0;
+let k =0;
+let xaxis = document.querySelector(".nums");
+for(k = 0;k<80;k++){
+var nums = document.createElement("span")
+nums.innerText = k;
+xaxis.appendChild(nums);
+nums.style.left = k*5 + "px";
+}
+
 function me(i){
 if(i<100000){
     var a = Math.floor(Math.random() * 80)
