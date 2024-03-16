@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }#mainbox{
+            height: 70vh;
+            width: 70vw;
+            border: 4px solid gold ;
+            position: absolute;
+        }#ball{
+            height: 2vh;
+            position: absolute;
+        
+            width: 2vh;
+            border-radius: 50%;
+            background-color: aliceblue;
+        }#platform{
+            height: 2vh;
+            width: 10vw;
+            position: absolute;
+            top: 68vh;
+            background-color: rgb(38, 207, 207);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-origin: center;
+        }#midspot{
+            height: 10px;
+            width: 10px;
+            background-color: red;
+            border-radius: 50%;
+        }#start{
+            height: 20px;
+            border-radius: 20px;
+            background-color: skyblue;
+            width: 50px;
+            position: absolute;
+            top: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainbox">
+        <div id="ball"></div>
+        <div id="platform">
+            <div id="midspot"></div>
+        </div>
+    </div>
+    <button id="start" onclick="movedown()
+    moveleft() ">start</button>
+</body>
+<script>
+    let ground = document.getElementById('mainbox')
+    let platform = document.getElementById("platform")
+    let mousepos;
+    let b = window.innerHeight
+    let  w = window.innerWidth
+    ground.addEventListener('mousemove', function(event) {
+  // Get the mouse coordinates from the event object
+    mousepos = event.clientX - w*15/100
+    if(mousepos > -2 && (mousepos < w*60/100)){
+    platform.style.left = mousepos + 'px';
+    }
+   
+  // Log the mouse coordinates
+  
+}); let reddot = document.getElementById('midspot')
+    let reddotXcordinate = reddot.getBoundingClientRect().left
+    console.log(reddotXcordinate)
+    
+    let ball = document.getElementById("ball")
+    let x = Math.floor(Math.random()*50 + 30)
+    let y = Math.floor(Math.random()*50 + 30)
+    ball.style.top = "0px";
+    let a = ball.getBoundingClientRect().top
+    ball.style.left = x+'px'
+    ball.style.top = y+'px'
+
+    console.log(b)
+    console.log(w)
+    let c = ball.getBoundingClientRect().left
+    console.log(c)
+    let k,j
+    let speed  =  2
+    function movedown (){
+        a = ball.getBoundingClientRect().top
+        k = 83*b/100
+        reddotXcordinate = reddot.getBoundingClientRect().left
+        if(k < a){  
+          if(c < reddotXcordinate - 9*w/100 || c > reddotXcordinate + 9*w/100)  {
+            movedown = null
+            moveup = null
+            moveleft = null
+            moveright = null
+          } 
+         moveup()
+        }else{
+        y = y+speed;
+        ball.style.top = y+"px";
+        setTimeout(movedown,5);
+    }}
+    function moveup (){
+        a = ball.getBoundingClientRect().top
+         k = 14*b/100
+        if(k > a){
+         movedown()
+        } 
+        else{
+        y = y - speed ;
+        ball.style.top = y+"px";
+        setTimeout(moveup,5); 
+    }}
+    function moveleft(){
+     c =  ball.getBoundingClientRect().left
+     j = 83*w/100
+     if(c>j){
+        moveright()
+     }else{
+        x = x+speed
+        ball.style.left = x+"px";
+        setTimeout(moveleft,5); 
+     }
+    }function moveright(){
+        c =  ball.getBoundingClientRect().left
+     j = 15*w/100
+     if(c<j){
+        moveleft()
+     }else{
+        x = x-speed
+        ball.style.left = x+"px";
+        setTimeout(moveright,5); 
+     }
+
+    }
+   function increasespeed1(){
+    speed++ 
+    if(speed < 10){
+    setTimeout(increasespeed1,3000)
+    }
+   }
+   
+   
+    setTimeout(increasespeed1,4000);
+    
+    
+
+</script>
+</html>
