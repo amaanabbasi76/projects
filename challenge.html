@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }body{
+            background-color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh ;
+        }
+        #main{
+          height: 50vh;
+          width: 50vh;
+          border: 4px solid black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform-origin: center;
+          position: relative;
+          border-radius: 50%;
+        }.second{
+            height: 5vh;
+            width: 5vh;
+            position: absolute;
+            /* border: 2px solid; */
+            transform-origin: 50% calc(var(--i)*(-100%) + 500%);
+            text-align: center;
+            top: calc((var(--i))*5vh);
+             
+        }
+        .second h4{
+            transform-origin: center;
+        }
+        .min h4{
+            transform-origin: center;
+        }
+        .hour h4{
+            transform-origin: center;
+        }
+        @keyframes roter{
+            0%{
+                transform: rotateZ(0deg);
+            }  100%{
+                transform: rotateZ(360deg);
+            }
+            
+        }@keyframes anti{
+            from{
+                transform-origin: center;
+                transform: rotateZ(0deg);
+            }to{
+                transform-origin: center;
+                transform: rotateZ(-360deg);
+            }
+        }
+        
+        .ball{
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+            background-color: rgba(247, 189, 17, 0.984);
+        }.secbox{
+            height: 50vh;
+            width: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }.minbox{
+            height: 50vh;
+            width: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+        .min{
+            height: 5vh;
+            width: 5vh;
+            position: absolute;
+            /* border: 2px solid; */
+            transform-origin: 50% calc(var(--j)*(-100%) + 500%);
+            text-align: center;
+            top: calc((var(--j))*5vh);
+             
+        }
+       .hourbox{
+            height: 50vh;
+            width: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+        .hour{
+            height: 5vh;
+            width: 5vh;
+            position: absolute;
+            /* border: 2px solid; */
+            transform-origin: 50% calc(var(--k)*(-100%) + 500%);
+            text-align: center;
+            top: calc((var(--k))*5vh);
+             
+        }.dialer{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            position: absolute;
+        }.dialers{
+            position: absolute;
+            height: 5vh;
+            width: 5px;
+            background-color: gold;
+            top: -30vh;
+            transform-origin: 50% 600%;
+            transform: rotateZ(calc(var(--i)*30deg));
+        }.outer{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            height: 60vh;
+            width: 60vh;
+            border-radius: 50%;
+            border: 4px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+    <div id="main">
+    <div class="secbox">
+        <span class="second"  id="sec0" style="--i:0"><h4 id="sec0c">4</h4></span>
+     <span class="second"  id="sec5" style="--i:1"><h4 id="sec5c">1</h4></span>
+     <span class="second"  id="sec4" style="--i:2"><h4 id="sec4c">2</h4></span>
+     <span class="second"  id="sec3" style="--i:3"><h4 id="sec3c">3</h4></span>
+     <span class="second"  id="sec2" style="--i:4"><h4 id="sec2c">4</h4></span>
+    </div>
+     <div class="ball"></div>
+     <div class="minbox">
+        <span class="min" id="min1" style="--j:4"><h4 id="min1c">1</h4></span>
+        <span class="min" id="min2" style="--j:2"><h4 id="min2c">1</h4></span>
+        <span class="min" id="min3" style="--j:3"><h4 id="min3c">1</h4></span>
+        <span class="min" id="min0" style="--j:1"><h4 id="min0c">1</h4></span>
+     </div>
+     <div class="hourbox">
+        <span class="hour" id="hour1" style="--k:4"><h4 id="hour1c">1</h4></span>
+        <span class="hour" id="hour2" style="--k:2"><h4 id="hour2c">1</h4></span>
+        <span class="hour" id="hour3" style="--k:3"><h4 id="hour3c">1</h4></span>
+     </div>
+     <div class="dialer">
+        <div class="dialers" style="--i:0"></div>
+        <div class="dialers" style="--i:1"></div>
+        <div class="dialers" style="--i:2"></div>
+        <div class="dialers" style="--i:3"></div>
+        <div class="dialers" style="--i:4"></div>
+        <div class="dialers" style="--i:5"></div>
+        <div class="dialers" style="--i:6"></div>
+        <div class="dialers" style="--i:7"></div>
+        <div class="dialers" style="--i:8"></div>
+        <div class="dialers" style="--i:9"></div>
+        <div class="dialers" style="--i:10"></div>
+        <div class="dialers" style="--i:11"></div>
+     </div>
+
+    </div>
+</div>
+</body>
+<script>
+    let sec0 = document.getElementById('sec0')
+    let sec0c = document.getElementById('sec0c')
+    let sec5 = document.getElementById('sec5')
+    let sec4 = document.getElementById('sec4')
+    let sec3 = document.getElementById('sec3')
+    let sec2 = document.getElementById('sec2')
+    let sec1c = document.getElementById('sec1c')
+    let sec2c = document.getElementById('sec2c')
+    let sec3c = document.getElementById('sec3c')
+    let sec4c = document.getElementById('sec4c')
+    let sec5c = document.getElementById('sec5c')
+    let min0 = document.getElementById('min0')
+    let min0c = document.getElementById('min0c')
+    let min1 = document.getElementById('min1')
+    let min1c = document.getElementById('min1c')
+    let min2 = document.getElementById('min2')
+    let min2c = document.getElementById('min2c')
+    let min3 = document.getElementById('min3')
+    let min3c = document.getElementById('min3c')
+    let hour1 = document.getElementById('hour1')
+    let hour1c = document.getElementById('hour1c')
+    let hour2 = document.getElementById('hour2')
+    let hour2c = document.getElementById('hour2c')
+    let hour3 = document.getElementById('hour3')
+    let hour3c = document.getElementById('hour3c')
+    let secAngle
+    let minAngle
+    let hourAngle 
+    let h
+    function rotate(){
+    hourAngle = new Date().getHours();    
+    secAngle =  new Date().getSeconds();
+    minAngle =  new Date().getMinutes();
+    hourAngle = hourAngle%12 ;
+    h = hourAngle*30+minAngle/2
+    
+    sec0.style.transform = "rotateZ("+secAngle*6+"deg)"
+    sec0c.innerHTML = secAngle
+    sec0c.style.transform = "rotateZ("+(-secAngle*6)+"deg)"
+    sec2.style.transform = "rotateZ("+secAngle*6+"deg)"
+    sec2c.innerHTML = secAngle
+    sec2c.style.transform = "rotateZ("+(-secAngle*6)+"deg)"
+    sec3.style.transform = "rotateZ("+secAngle*6+"deg)"
+    sec3c.innerHTML = secAngle
+    sec3c.style.transform = "rotateZ("+(-secAngle*6)+"deg)"
+    sec4.style.transform = "rotateZ("+secAngle*6+"deg)"
+    sec4c.innerHTML = secAngle
+    sec4c.style.transform = "rotateZ("+(-secAngle*6)+"deg)"
+    sec5.style.transform = "rotateZ("+secAngle*6+"deg)"
+    sec5c.innerHTML = secAngle
+    sec5c.style.transform = "rotateZ("+(-secAngle*6)+"deg)"
+    min0.style.transform = "rotateZ("+minAngle*6+"deg)"
+    min0c.innerHTML = minAngle
+    min0c.style.transform = "rotateZ("+(-minAngle*6)+"deg)"
+    min1.style.transform = "rotateZ("+minAngle*6+"deg)"
+    min1c.innerHTML = minAngle
+    min1c.style.transform = "rotateZ("+(-minAngle*6)+"deg)"
+    min2.style.transform = "rotateZ("+minAngle*6+"deg)"
+    min2c.innerHTML = minAngle
+    min2c.style.transform = "rotateZ("+(-minAngle*6)+"deg)"
+    min3.style.transform = "rotateZ("+minAngle*6+"deg)"
+    min3c.innerHTML = minAngle
+    min3c.style.transform = "rotateZ("+(-minAngle*6)+"deg)"
+    hour1.style.transform = "rotateZ("+h +"deg)"
+    hour1c.innerHTML = hourAngle
+    hour1c.style.transform = "rotateZ("+(-h )+"deg)"
+    hour2.style.transform = "rotateZ("+h +"deg)"
+    hour2c.innerHTML = hourAngle
+    hour2c.style.transform = "rotateZ("+(-h )+"deg)"
+    hour3.style.transform = "rotateZ("+h +"deg)"
+    hour3c.innerHTML = hourAngle
+    hour3c.style.transform = "rotateZ("+(-h)+"deg)"
+    setTimeout(rotate,1000)
+    }
+    rotate()
+    
+</script>
+
+</html>
